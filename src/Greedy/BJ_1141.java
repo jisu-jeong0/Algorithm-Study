@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.HashSet;
 
 class BJ_1141 {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {     // 접두사
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(bufferedReader.readLine());
 

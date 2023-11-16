@@ -7,7 +7,7 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 class BJ_12865 {
-    public static void main(String[] args) throws IOException{
+    public static void main(String[] args) throws IOException{      // 평범한 배낭
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
 
@@ -26,15 +26,15 @@ class BJ_12865 {
             weights[i] = w;
             values[i] = v; 
         }
-            
+
+        //  물품의 수 N(1 ≤ N ≤ 100)
+        //  무게 K(1 ≤ K ≤ 100,000)
         int[][] dp = new int[n + 1][k + 1];
 
         for (int i = 1; i <= n; i++) {
             for (int w = 1; w <= k; w++) {
-                if (weights[i - 1] < w) {
+                if (weights[i - 1] <= w) {
                     dp[i][w] = Math.max(dp[i - 1][w], values[i - 1] + dp[i - 1][w - weights[i - 1]]);
-                } else if (weights[i - 1] == w) {
-                    dp[i][w] = values[i - 1] + dp[i - 1][w - weights[i - 1]];
                 } else {
                     dp[i][w] = dp[i - 1][w];
                 }

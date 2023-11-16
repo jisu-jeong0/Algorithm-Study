@@ -13,9 +13,9 @@ class BJ_1138 {       // 한 줄로 서기
         int[] line = new int[n];
 
         for (int i = 0; i < n; i++) {
-            int cnt = Integer.parseInt(str[i]);
+            int cnt = Integer.parseInt(str[i]);     // height
             for (int j = 0; j < n; j++) {
-                if (cnt == 0 && line[j] == 0) {
+                if (cnt == 0 && line[j] == 0) {   
                     line[j] = i + 1;
                     break;
                 }
